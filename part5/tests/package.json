@@ -1,0 +1,14 @@
+{
+  "name": "bloglist-e2e",
+  "version": "1.0.0",
+  "description": "Playwright E2E tests for the bloglist app (Full Stack Open part 5)",
+  "type": "module",
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.1"
+  }
+}
