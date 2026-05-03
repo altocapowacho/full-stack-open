@@ -1,0 +1,10 @@
+{
+  "notes": [
+    { "id": 1, "content": "first note from json-server", "important": true },
+    { "id": 2, "content": "another note", "important": false }
+  ],
+  "persons": [
+    { "id": 1, "name": "Arto Hellas", "number": "040-123456" },
+    { "id": 2, "name": "Ada Lovelace", "number": "39-44-5323523" }
+  ]
+}
