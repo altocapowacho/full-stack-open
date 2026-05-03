@@ -69,4 +69,19 @@ router.put('/:id', async (req, res) => {
   else res.status(404).end()
 })
 
+router.post('/:id/comments', async (req, res) => {
+  const comment = (req.body?.comment ?? '').trim()
+  if (!comment) {
+    return res.status(400).json({ error: 'comment text is required' })
+  }
+
+  const blog = await Blog.findById(req.params.id)
+  if (!blog) return res.status(404).end()
+
+  blog.comments = blog.comments.concat(comment)
+  const saved = await blog.save()
+  await saved.populate('user', { username: 1, name: 1 })
+  res.status(201).json(saved)
+})
+
 module.exports = router
